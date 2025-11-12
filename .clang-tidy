@@ -1,0 +1,26 @@
+---
+# Enable a conservative, useful set of clang-tidy checks by default.
+# Adjust or override by setting CLANG_TIDY_CHECKS or editing this file.
+Checks: >
+  clang-analyzer-*,
+  bugprone-*,
+  performance-*,
+  readability-*,
+  modernize-*,
+  portability-*
+
+# Treat no warnings as errors by default; CI can enable WarningsAsErrors if desired.
+WarningsAsErrors: ''
+
+# Analyze headers in the repository by default
+HeaderFilterRegex: '.*'
+
+# Don't change formatting here; use clang-format for fixes
+FormatStyle: none
+
+# Example check options (uncomment or add more as needed)
+#CheckOptions:
+#  - key:             modernize-use-auto.MinTypeNameLength
+#    value:           '0'
+
+...
